@@ -124,7 +124,6 @@ document.querySelectorAll('.js-update-link')
     .forEach((link) => {
         link.addEventListener('click', () => {
             const productId = link.dataset.productId;
-            console.log(productId);
 
             const list = document.querySelector(`.js-cart-item-container-${productId}`)
             list.classList.add("is-editing-quantity");
@@ -138,9 +137,8 @@ document.querySelectorAll('.js-update-link')
 
             const newQuant = document.querySelector(`.js-quantity-input-${productId}`).value;
 
-            updateQuantity(productId, newQuant);
+            updateQuantity(productId, parseInt(newQuant));
             
-
             const list = document.querySelector(`.js-cart-item-container-${productId}`)
             list.classList.remove("is-editing-quantity");
 

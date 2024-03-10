@@ -58,9 +58,9 @@ export function calculateCartQuantity(){
 export function updateQuantity(productId, newQuantity){
     cart.forEach((cartItem) => {
         if(productId === cartItem.productId){
-            cart.quantity = newQuantity;
+            cartItem.quantity = newQuantity;
             document.querySelector(`.js-quantity-label-${productId}`)
-            .innerHTML = parseInt(cart.quantity);
+            .innerHTML = parseInt(cartItem.quantity);
         }
         saveToStorage();
     });
